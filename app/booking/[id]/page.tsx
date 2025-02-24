@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import BookingForm from '@/components/booking/BookingForm';
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 
 // Define an interface for the teacher type
 interface Teacher {
@@ -46,17 +46,11 @@ const teachers: Teacher[] = [
   }
 ];
 
-// Define the props type for the page
-type BookingPageProps = {
-  params: {
-    id: string;
-  };
-};
-
 // Metadata generation
-export async function generateMetadata({ 
-  params 
-}: BookingPageProps): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: { id: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const teacherId = parseInt(params.id);
   const teacher = teachers.find(t => t.id === teacherId) || teachers[0];
   
@@ -66,7 +60,7 @@ export async function generateMetadata({
   };
 }
 
-export default function BookingPage({ params }: BookingPageProps) {
+export default function BookingPage({ params }: { params: { id: string } }) {
   // In a real app, you'd fetch the teacher data based on the ID
   const teacherId = parseInt(params.id);
   const teacher = teachers.find(t => t.id === teacherId) || teachers[0];
