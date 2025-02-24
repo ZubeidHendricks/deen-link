@@ -14,7 +14,7 @@ export default function BookingConfirmationPage() {
             
             <h1 className="text-2xl font-bold mb-2">Booking Confirmed!</h1>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Your lesson has been successfully booked. The teacher will be notified and you'll receive a confirmation email shortly.
+              Your lesson has been successfully booked. The teacher will be notified and you&apos;ll receive a confirmation email shortly.
             </p>
             
             <div className="bg-gray-50 dark:bg-neutral-700 p-4 rounded-md mb-6 text-left">
