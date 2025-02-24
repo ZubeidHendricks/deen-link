@@ -1,7 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import BookingCalendar from "@/components/teachers/BookingCalendar";
-import TeacherReviews from "@/components/teachers/TeacherReviews";
+import Link from 'next/link';
+import BookingCalendar from '@/components/teachers/BookingCalendar';
+import TeacherReviews from '@/components/teachers/TeacherReviews';
 
 // Mock data - in a real app, this would be fetched from a database
 const teachers = [
