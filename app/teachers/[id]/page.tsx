@@ -37,7 +37,13 @@ const teachers = [
   // Other teachers would be here
 ];
 
-export default function TeacherProfile({ params }: { params: { id: string } }) {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export default function TeacherProfile({ params }: Props) {
   // In a real app, you'd fetch the teacher data based on the ID
   const teacher = teachers.find(t => t.id === parseInt(params.id)) || teachers[0];
   
@@ -179,9 +185,9 @@ export default function TeacherProfile({ params }: { params: { id: string } }) {
                   </div>
                 </div>
                 
-                <BookingCalendar teacherId={teacher.id} availability={teacher.availability} />
+                <BookingCalendar availability={teacher.availability} />
                 
-                <button className="btn-primary w-full mt-6">Book Now</button>
+                <Link href={`/booking/${teacher.id}`} className="btn-primary w-full mt-6 block text-center">Book Now</Link>
                 
                 <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <button className="w-full flex items-center justify-center text-primary hover:text-primary-dark">
