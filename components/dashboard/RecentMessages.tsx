@@ -6,14 +6,14 @@ export default function RecentMessages() {
     {
       id: 101,
       sender: { id: 1, name: 'Aisha Abdullah', role: 'teacher' },
-      preview: 'I've shared some resources for our next Quran lesson...',
+      preview: 'I\'ve shared some resources for our next Quran lesson...',
       time: '2025-02-24T10:23:00',
       unread: true
     },
     {
       id: 102,
       sender: { id: 2, name: 'Fatima Khan', role: 'teacher' },
-      preview: 'Great progress in today's Arabic lesson! For homework...',
+      preview: 'Great progress in today\'s Arabic lesson! For homework...',
       time: '2025-02-23T18:45:00',
       unread: false
     },
