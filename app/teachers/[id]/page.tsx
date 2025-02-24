@@ -37,15 +37,10 @@ const teachers = [
   // Other teachers would be here
 ];
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export default function TeacherProfile({ params }: Props) {
+export default function TeacherProfile({ params }: { params: { id: string } }) {
   // In a real app, you'd fetch the teacher data based on the ID
-  const teacher = teachers.find(t => t.id === parseInt(params.id)) || teachers[0];
+  const teacherId = parseInt(params.id);
+  const teacher = teachers.find(t => t.id === teacherId) || teachers[0];
   
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen py-8">
