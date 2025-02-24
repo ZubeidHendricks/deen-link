@@ -31,8 +31,6 @@ export default function LessonCard({ lesson, userType }: LessonCardProps) {
     });
   };
   
-  const isUpcoming = new Date(lesson.date) > new Date();
-  
   return (
     <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
       <div className="p-4">
