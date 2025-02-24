@@ -1,8 +1,30 @@
 import Link from 'next/link';
 import BookingForm from '@/components/booking/BookingForm';
+import { Metadata } from 'next';
+
+// Define an interface for the teacher type
+interface Teacher {
+  id: number;
+  name: string;
+  title: string;
+  subjects: string[];
+  hourlyRate: number;
+  availability: {
+    monday: string[];
+    tuesday: string[];
+    wednesday: string[];
+    thursday: string[];
+    friday: string[];
+    saturday: string[];
+    sunday: string[];
+  };
+  online: boolean;
+  inPerson: boolean;
+  location: string;
+}
 
 // Mock data - in a real app, this would come from an API
-const teachers = [
+const teachers: Teacher[] = [
   {
     id: 1,
     name: 'Aisha Abdullah',
@@ -24,7 +46,27 @@ const teachers = [
   }
 ];
 
-export default function BookingPage({ params }: { params: { id: string } }) {
+// Define the props type for the page
+type BookingPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+// Metadata generation
+export async function generateMetadata({ 
+  params 
+}: BookingPageProps): Promise<Metadata> {
+  const teacherId = parseInt(params.id);
+  const teacher = teachers.find(t => t.id === teacherId) || teachers[0];
+  
+  return {
+    title: `Book Lesson with ${teacher.name}`,
+    description: `Book a lesson with ${teacher.name}, ${teacher.title}`
+  };
+}
+
+export default function BookingPage({ params }: BookingPageProps) {
   // In a real app, you'd fetch the teacher data based on the ID
   const teacherId = parseInt(params.id);
   const teacher = teachers.find(t => t.id === teacherId) || teachers[0];
