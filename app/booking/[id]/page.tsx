@@ -24,7 +24,13 @@ const teachers = [
   }
 ];
 
-export default function BookingPage({ params }: { params: { id: string } }) {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export default function BookingPage({ params }: Props) {
   // In a real app, you'd fetch the teacher data based on the ID
   const teacher = teachers.find(t => t.id === parseInt(params.id)) || teachers[0];
   
