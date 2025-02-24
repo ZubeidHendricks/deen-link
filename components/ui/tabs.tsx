@@ -29,7 +29,7 @@ export const Tabs = ({
 export const TabsList = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>((props, ref) => (
   <div
     ref={ref}
     className="inline-flex h-10 items-center justify-center rounded-md bg-gray-100 p-1 text-gray-500 dark:bg-neutral-800 dark:text-gray-400 w-full"
@@ -41,7 +41,7 @@ TabsList.displayName = "TabsList";
 export const TabsTrigger = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement> & { value: string }
->(({ className, value, ...props }, ref) => {
+>(({ value, ...props }, ref) => {
   const context = useContext(TabsContext);
   if (!context) {
     throw new Error('TabsTrigger must be used within a Tabs component');
@@ -65,7 +65,7 @@ TabsTrigger.displayName = "TabsTrigger";
 export const TabsContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & { value: string }
->(({ className, value, ...props }, ref) => {
+>(({ value, ...props }, ref) => {
   const context = useContext(TabsContext);
   if (!context) {
     throw new Error('TabsContent must be used within a Tabs component');
