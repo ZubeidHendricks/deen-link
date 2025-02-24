@@ -19,7 +19,7 @@ type BookingCalendarProps = {
   availability: TeacherAvailability;
 };
 
-export default function BookingCalendar({ teacherId, availability }: BookingCalendarProps) {
+export default function BookingCalendar({ availability }: BookingCalendarProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   
