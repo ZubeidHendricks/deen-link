@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import LessonCard from '@/components/lessons/LessonCard';
 
@@ -101,8 +102,8 @@ export default function LessonsPage() {
                 ))
               ) : (
                 <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-8 text-center">
-                  <p className="text-gray-500 dark:text-gray-400 mb-4">You don't have any upcoming lessons.</p>
-                  <a href="/teachers" className="btn-primary inline-block">Find a Teacher</a>
+                  <p className="text-gray-500 dark:text-gray-400 mb-4">You don&apos;t have any upcoming lessons.</p>
+                  <Link href="/teachers" className="btn-primary inline-block">Find a Teacher</Link>
                 </div>
               )}
             </div>
@@ -116,7 +117,7 @@ export default function LessonsPage() {
                 ))
               ) : (
                 <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-8 text-center">
-                  <p className="text-gray-500 dark:text-gray-400">You don't have any pending lessons.</p>
+                  <p className="text-gray-500 dark:text-gray-400">You don&apos;t have any pending lessons.</p>
                 </div>
               )}
             </div>
@@ -130,7 +131,7 @@ export default function LessonsPage() {
                 ))
               ) : (
                 <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-8 text-center">
-                  <p className="text-gray-500 dark:text-gray-400">You don't have any completed lessons yet.</p>
+                  <p className="text-gray-500 dark:text-gray-400">You don&apos;t have any completed lessons yet.</p>
                 </div>
               )}
             </div>
